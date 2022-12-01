@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MonkeyApp.VM
 {
-    class MonkeyDetailsVM : BaseVM
+    public class MonkeyDetailsVM : BaseVM
     {
 
     }

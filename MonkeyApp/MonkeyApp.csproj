@@ -39,7 +39,7 @@
 
 		<!-- Images -->
 		<!--подстановочный знак («**») указывает, что папка « Изображения » может содержать дочерние папки-->
-		<MauiImage Include="Resources\Images\**\*"/>
+		<MauiImage Include="Resources\Images\**\*" />
 
 		<!-- Custom Fonts -->
 		
@@ -56,6 +56,10 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\cat.png" />
 	  <None Remove="Resources\Images\cat2.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
