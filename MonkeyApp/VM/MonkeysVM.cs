@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.Input;
 using MonkeyApp.Model;
 using MonkeyApp.Services;
+using MonkeyApp.View;
 
 namespace MonkeyApp.VM
 {
@@ -51,6 +52,16 @@ namespace MonkeyApp.VM
             {
                 IsBusy = false;
             }
+        }
+
+        [RelayCommand]
+        async Task GetToDetailsAsync(Monkey monkey)
+        {
+            if (monkey is null) return;
+            await Shell.Current.GoToAsync($"{nameof(DetailsPage)}?id={monkey.Name}", true, new Dictionary<string, object>
+            {
+                {"Monkey", monkey}
+            });
         }
     }
 }

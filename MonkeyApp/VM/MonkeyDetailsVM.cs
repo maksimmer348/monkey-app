@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
+using MonkeyApp.Model;
 
 namespace MonkeyApp.VM
 {
-    public class MonkeyDetailsVM : BaseVM
+    [QueryProperty("Monkey", "Monkey")]
+    public partial class MonkeyDetailsVM : BaseVM
     {
+        public MonkeyDetailsVM()
+        {
 
+        }
+        [ObservableProperty]
+        Monkey monkey;
+    
     }
 }
