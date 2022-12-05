@@ -5,8 +5,40 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewModel="clr-namespace:MonkeyApp.VM"
     x:DataType="viewModel:MonkeyDetailsVM"
-    Title="{Binding Monkey.Name}">
-    <VerticalStackLayout>
-        <Label Text="{Binding Monkey.Details}" />
-    </VerticalStackLayout>
+     Title="{Binding Monkey.Name}">
+    <!-- позволяет сдеолать это коно модальным с анимайией Shell.PresentationMode="ModalAnimated"-->
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions="*,Auto,*" RowDefinitions="160, Auto">
+                <BoxView
+                    Grid.ColumnSpan="3"
+                    HeightRequest="160"
+                    HorizontalOptions="FillAndExpand"
+                    Color="{StaticResource Primary}" />
+                <Frame
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    Margin="0,80,0,0"
+                    Padding="0"
+                    CornerRadius="80"
+                    HeightRequest="160"
+                    HorizontalOptions="Center"
+                    IsClippedToBounds="True"
+                    WidthRequest="160">
+                    <Image
+                        Aspect="AspectFill"
+                        HeightRequest="160"
+                        Source="{Binding Monkey.Image}"
+                        VerticalOptions="Center"
+                        WidthRequest="160" />
+                </Frame>
+            </Grid>
+
+            <VerticalStackLayout Padding="10" Spacing="10">
+                <Label Text="{Binding Monkey.Details}" FontSize="16"/>
+                <Label Text="{Binding Monkey.Location, StringFormat=Lokation: {0}}" FontSize="10"/>
+                <Label Text="{Binding Monkey.Population, StringFormat= Population: {0}}" FontSize="10"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

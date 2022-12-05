@@ -13,19 +13,19 @@
         ColumnSpacing="5"
         RowDefinitions="*,Auto"
         RowSpacing="0">
+
         <CollectionView
             Grid.ColumnSpan="2"
-            BackgroundColor="Pink"
+            BackgroundColor="{StaticResource Primary}" 
             ItemsSource="{Binding Monkeys}"
             SelectionChangedCommand="{Binding GetToDetailsCommand}"
-            SelectionChangedCommandParameter="{}"
             SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Monkey">
-                    <Grid>
+                    <Grid Padding="10">
                         <Frame Padding="0" HeightRequest="125">
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type vievModel:MonkeysVM}}, Path=GetToDetailsCommand}" />
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vievModel:MonkeysVM}}, Path=GetToDetailsCommand}" CommandParameter="{Binding .}" />
                             </Frame.GestureRecognizers>
                             <Grid ColumnDefinitions="125,*">
                                 <Image
@@ -53,6 +53,14 @@
             Command="{Binding GetMonkeyCommand}"
             IsEnabled="{Binding IsNotBusy}"
             Text="Get Monkeys" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="8"
+            Command="{Binding GetCloseMonkeyCommand}"
+            IsEnabled="{Binding IsNotBusy}"
+            Text="Find close monkey" />
 
         <ActivityIndicator
             Grid.RowSpan="2"

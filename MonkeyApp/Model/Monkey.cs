@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MonkeyApp.Model
 {
- 
+
     public class Monkey
     {
         public string Name { get; set; }
@@ -17,8 +17,9 @@ namespace MonkeyApp.Model
         public int Population { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-
-
+  
     }
+
+   
 
 }

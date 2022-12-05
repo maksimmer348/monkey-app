@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using MonkeyApp.Model;
 
 namespace MonkeyApp.VM
@@ -13,10 +14,17 @@ namespace MonkeyApp.VM
     {
         public MonkeyDetailsVM()
         {
-
+             
         }
         [ObservableProperty]
         Monkey monkey;
-    
+
+        //[RelayCommand]
+        //async Task GoBackAsync()
+        //{
+        //    await Shell.Current.GoToAsync("../DetailsPage");
+        //    await Shell.Current.GoToAsync("../..");
+        //    await Shell.Current.GoToAsync("..?id=1");
+        //}
     }
-}
+} 
